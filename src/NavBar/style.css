@@ -1,0 +1,15 @@
+.logo_btn{
+    background-color: transparent;
+    border: none;
+    height: 5rem;
+}
+.nav_bar{
+    position: fixed;
+    bottom: 0;          
+    width: 100%;       
+    display: flex;     
+    justify-content: space-between;  
+    align-items: center;  
+    background-color: #333;
+    padding: 10px 20px; 
+}
