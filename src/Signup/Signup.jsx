@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './style.css'
 
 
 
@@ -55,10 +56,9 @@ const handleSubmit = async (e) => {
     
     return (
       <>
-       <div id='group_login_btn'>
-          <button className="button" onClick={handleClickLogin}>Connection</button>
-        </div>
+     
     <div id="Signup" >
+          <button className="button"  id="login_btn" onClick={handleClickLogin}>Connection</button>
     {error && <p style={{ color: 'red' }}>{error}</p>}
     {success && <p style={{ color: 'green' }}>{success}</p>}
 
@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
           />
         </div>
         <div>
-          <button type="submit" className='button end_button'>S'inscrire</button>
+          <button type="submit" className='button'>S'inscrire</button>
         </div>
       </form>
     </div>

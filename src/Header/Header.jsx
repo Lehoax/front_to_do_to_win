@@ -60,10 +60,11 @@ const Header = () => {
 
     } else {
       const currentPath = window.location.pathname;
-      if (!['/login', '/signup', '/forgot-password'].includes(currentPath)) {
+      if (!['/login', '/signup', '/forgot_password'].includes(currentPath)) {
         navigate('/login'); 
       }
-    }
+    }    
+    
   }, [isConnected, navigate, token, logout]);
 
 const ClickLogout = () => {
@@ -75,7 +76,8 @@ const ClickLogout = () => {
     <div id="header">
       <img id='img_head' src={logo} alt="logo to do to win" />
       <p id="xp">
-        {isConnected ? <Lvl xp={user.xp}/>  : '0'}
+      {isConnected && user ? <Lvl xp={user.xp} /> : '0'}
+
       </p>
       {isConnected && (
         <div>

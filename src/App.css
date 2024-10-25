@@ -1,1 +1,37 @@
+body{
+    background-color: #FFB703;
+    height: 100vh;
+}
 
+.button{
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FB8500;
+    border-color: #023047;
+    color: #023047;
+}
+.button:hover{
+    opacity: 50%;
+    cursor: pointer;
+}
+input {
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    transition: border-color 0.3s ease; 
+}
+
+input:focus {
+    border-color: #007BFF; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+.home{
+    display: flex;
+    flex-direction: column;
+}

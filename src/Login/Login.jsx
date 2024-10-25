@@ -4,6 +4,8 @@ import { useAuth } from '../Context/AuthContext';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useNav } from "../Context/NavContext";
 
+import './style.css'
+
 const Login = () => {
   const { setCurrentPage } = useNav();
   const serveurURL = process.env.REACT_APP_SERVER_URL;
@@ -36,7 +38,8 @@ const Login = () => {
 
       if (response.status === 200) {
         const token = response.data.token; 
-        storeToken(token);         
+        storeToken(token);      
+        setIsConnected(true);   
         setSuccess('Connexion réussie!');
         setError(''); 
       }
@@ -57,6 +60,9 @@ const Login = () => {
   if (isConnected) {    
     return <Navigate to="/" replace />;
   }
+  const forgotPassword = () =>{
+    navigate('/forgot_password')
+  }
 
   const handleClickSignup = () => {
     navigate('/signup');
@@ -64,10 +70,8 @@ const Login = () => {
 
   return (
     <>
-      <div id='group_login_btn'>
-        <button className="button" onClick={handleClickSignup}>Inscription</button>
-      </div>
       <div id="login">
+        <button className="button" id='signup_btn' onClick={handleClickSignup}>Inscription</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {success && <p style={{ color: 'green' }}>{success}</p>} 
         <form onSubmit={handleSubmit}>
@@ -90,9 +94,11 @@ const Login = () => {
             />
           </div>
           <div>
-            <button type="submit" className='button end_button'>Se connecter</button>
+            <button type="submit" className='button'>Se connecter</button>
           </div>
         </form>
+
+        <a id='forgot_btn' onClick={forgotPassword}>Mot de passe oublié</a>
       </div>
     </>
   );
