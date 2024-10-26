@@ -8,6 +8,8 @@ import logoutimg from '../img/logout.png'
 import axios from 'axios';
 import { useUser } from '../Context/UserContext';
 import Lvl from '../Helpers/Lvl'
+import { useNav } from "../Context/NavContext";
+
 
 
 
@@ -17,10 +19,11 @@ const Header = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const {user, updateUser } = useUser();
+  const {CurrentPage, setCurrentPage} = useNav();
 
   const fetchData = async () => {
     try {
-      const userEmail = localStorage.getItem('email'); // Récupération de l'email depuis le localStorage
+      const userEmail = localStorage.getItem('email'); 
 
       if (!userEmail) {
         setError('Veuillez vous reconnecter');
@@ -31,15 +34,15 @@ const Header = () => {
         { email: userEmail }, 
         {
           headers: {
-            Authorization: `Bearer ${token}` // Utilisation du token depuis le contexte
+            Authorization: `Bearer ${token}`
           },
           withCredentials: true
         }
       );
 
-      if (response.status === 200) {
-        updateUser(response.data.user)        
-        setError(null);        
+      if (response.status === 200) {   
+        setError(null);             
+        return updateUser(response.data.user)
       }
     } catch (err) {
       if (err.response) {
@@ -54,19 +57,33 @@ const Header = () => {
   };
 
   useEffect(() => {
+    let isMounted = true; 
     if (isConnected) {
-      fetchData();
-      console.log();
+      navigate('/');
+      setCurrentPage('my_task')
 
-    } else {
-      const currentPath = window.location.pathname;
-      if (!['/login', '/signup', '/forgot_password'].includes(currentPath)) {
-        navigate('/login'); 
-      }
-    }    
+    }else{
+      navigate('/login')
+      setCurrentPage('login')
+    }
     
-  }, [isConnected, navigate, token, logout]);
-
+    const fetchUser = async () => {
+      if (isConnected && isMounted) { 
+        const newUser = await fetchData();
+        if (newUser && newUser !== user) {
+          updateUser(newUser); 
+        }
+      }
+    };
+  
+    fetchUser(); 
+  
+    return () => {
+      isMounted = false; 
+    };
+    
+  }, [isConnected, token, user]); 
+  
 const ClickLogout = () => {
   logout(); 
   navigate('/login');

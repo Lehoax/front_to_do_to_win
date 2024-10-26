@@ -10,7 +10,7 @@ import { useAuth } from '../Context/AuthContext';
 
 const NavBar = () => {
     const navigate = useNavigate(); 
-    const {CurrentPage, setCurrentPage} = useNav('mytask');
+    const {CurrentPage, setCurrentPage} = useNav('');
     const { isConnected } = useAuth();
 
     const handleNavigation = (view) => {
@@ -24,9 +24,9 @@ const NavBar = () => {
                     ''
                     ) : (
                         <>
-            {CurrentPage !== 'mytask' ? (
+            {CurrentPage !== '' ? (
                 <div className="nav_bar">
-                    <button className="back_btn" /* onClick={() => handleNavigation('')} */>
+                    <button className="back_btn" onClick={() => handleNavigation('')} >
                         <img src={back} alt="Retour" />
                     </button>
                 </div>

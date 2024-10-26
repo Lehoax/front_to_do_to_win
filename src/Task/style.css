@@ -1,0 +1,36 @@
+.task{
+    border: 2px solid black;
+    margin-top: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #219EBC;
+    width: 40vh;
+}
+.title_task{
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    text-align: left;
+    color: #023047;
+}
+.desc_task{
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    text-align: left;
+    color: #023047;
+    word-wrap: break-word; 
+    white-space: normal; 
+
+}
+.xp_done{
+    display: flex;
+    justify-content: space-around;
+}
+.xp{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: large;
+    color: #FB8500;
+}

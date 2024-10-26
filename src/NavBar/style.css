@@ -1,12 +1,12 @@
 .logo_btn{
     background-color: transparent;
     border: none;
-    height: 5rem;
+    height: 3rem;
 }
 .nav_bar{
     position: fixed;
     bottom: 0;          
-    width: 100%;       
+    width: -webkit-fill-available;
     display: flex;     
     justify-content: space-between;  
     align-items: center;  
