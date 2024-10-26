@@ -14,7 +14,7 @@ const Tasks = () =>{
     const {CurrentPage, setCurrentPage} = useNav('');
 
     useEffect(() => {
-      setCurrentPage('')
+      setCurrentPage('/')
       
     }, []); 
     

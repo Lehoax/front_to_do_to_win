@@ -60,7 +60,7 @@ const Header = () => {
     let isMounted = true; 
     if (isConnected) {
       navigate('/');
-      setCurrentPage('my_task')
+      setCurrentPage('/')
 
     }else{
       navigate('/login')
