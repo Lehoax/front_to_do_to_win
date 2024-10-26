@@ -27,7 +27,7 @@ const NavBar = () => {
                         <>
             {CurrentPage !== '/' ? (
                 <div className="nav_bar">
-                    <button className="back_btn" onClick={() => handleNavigation('/')} >
+                    <button className="logo_btn back" onClick={() => handleNavigation('/')} >
                         <img src={back} alt="Retour" />
                     </button>
                 </div>

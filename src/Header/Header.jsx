@@ -58,11 +58,7 @@ const Header = () => {
 
   useEffect(() => {
     let isMounted = true; 
-    if (isConnected) {
-      navigate('/');
-      setCurrentPage('/')
-
-    }else{
+    if (!isConnected) {
       navigate('/login')
       setCurrentPage('login')
     }
@@ -88,6 +84,10 @@ const ClickLogout = () => {
   logout(); 
   navigate('/login');
 }
+const ClickProfile = () =>{
+  navigate('/profile');
+  setCurrentPage('/profile')
+}
 
   return (
     <div id="header">
@@ -99,7 +99,7 @@ const ClickLogout = () => {
       {isConnected && (
         <div>
         <img id="logout_btn"onClick={ClickLogout} src={logoutimg} alt="Logout" />
-        <img src={profile} id='get_profile' alt="Profile" />
+        <img src={profile} onClick={ClickProfile} id='get_profile' alt="Profile" />
         </div>
       )}
       {error && <p className="error">{error}</p>} {/* Affichage d'un message d'erreur si présent */}

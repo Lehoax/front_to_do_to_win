@@ -6,6 +6,7 @@ import Signup from '../src/Signup/Signup'
 import NavBar from './NavBar/Navbar';
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import Tasks from './Tasks/Tasks';
+import Profile from './Profile/Profile';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
         <Route path="/" element={<Tasks />} />
 
