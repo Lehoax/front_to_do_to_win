@@ -2,6 +2,11 @@
     background-color: transparent;
     border: none;
     margin: 0;
+    height: 4rem;
+}
+.logo_btn:hover{
+    cursor: pointer;
+    opacity: 70%;
 }
 .nav_bar{
     position: fixed;

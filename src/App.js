@@ -7,6 +7,8 @@ import NavBar from './NavBar/Navbar';
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import Tasks from './Tasks/Tasks';
 import Profile from './Profile/Profile';
+import NewTask from './NewTask/NewTask';
+import NewFriend from './NewFriend/NewFriend';
 
 
 function App() {
@@ -19,8 +21,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/new_task" element={<NewTask />} />
         <Route path="/" element={<Tasks />} />
-
+        <Route path='/new_friend' element={<NewFriend/>} />
       </Routes>
       </div>
       <NavBar/>

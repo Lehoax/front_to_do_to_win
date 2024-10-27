@@ -1,0 +1,83 @@
+@media (min-width: 1024px) {
+    #new_task_form{
+        margin-left: 40vh;
+        margin-right: 40vh;
+    }
+}
+
+#add_btn{
+    background-color: transparent;
+    border: none;
+}
+#add_btn:hover{
+    opacity: 70%;
+}
+.back_btn{
+    background-color: transparent;
+    border: none;
+}
+.back_btn:hover{
+    opacity: 70%;
+}
+textarea{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+#new_task_form{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+}
+#radio_btn_group{
+    display: flex;
+    justify-content: space-around;
+}
+.radio_btn{
+  appearance: none; 
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.radio_btn:checked{
+    opacity: 30%;
+
+}
+#green{
+    background-color: green; 
+}
+#orange{
+    background-color: orange; 
+}
+#red{
+    background-color: red; 
+}
+#new_task_submit{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FB8500;
+    border-color: #023047;
+    color: #023047;
+    margin-top: 1.5rem;    
+}
+#new_task_submit:hover{
+    opacity: 50%;
+    cursor: pointer;
+}
+#hardness{
+    text-decoration: underline;
+}

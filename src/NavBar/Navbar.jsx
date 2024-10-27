@@ -33,10 +33,10 @@ const NavBar = () => {
                 </div>
             ) : (
                 <div className="nav_bar">
-                    <button className="logo_btn left" /* onClick={() => handleNavigation('')} */>
+                    <button className="logo_btn left" onClick={() => handleNavigation('/new_friend')} >
                         <img src={friends} alt="Amis" />
                     </button>
-                    <button className="logo_btn center" /* onClick={() => handleNavigation('')} */>
+                    <button className="logo_btn center" onClick={() => handleNavigation('/new_task')} >
                         <img src={add} alt="Ajouter" />
                     </button>
                     <button className="logo_btn right" /* onClick={() => handleNavigation('')} */>

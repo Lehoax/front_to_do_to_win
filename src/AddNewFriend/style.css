@@ -1,0 +1,45 @@
+#display_friend {
+    width: fit-content;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; 
+}
+
+#friend {
+    display: flex;
+    align-items: center;
+    height: 3rem; 
+}
+
+#add_friend_btn_img {
+    height: 2rem;
+}
+
+#add_friend_btn_img:hover {
+    opacity: 30%;
+}
+
+#add_friend_btn {
+    background-color: transparent;
+    border: 0;
+}
+
+.message-container {
+    height: 1.5rem; 
+    position: relative;
+}
+
+.message {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    color: red; 
+}
+
+.success-message {
+    color: green;
+}

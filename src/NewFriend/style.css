@@ -1,0 +1,28 @@
+#friend_form{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+@media (min-width: 1024px) {
+    #friend_form{
+        margin-left: 40vh;
+        margin-right: 40vh;
+    }
+}
+#friend_btn{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FB8500;
+    border-color: #023047;
+    color: #023047;
+
+}
