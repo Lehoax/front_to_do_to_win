@@ -38,8 +38,11 @@ const Login = () => {
 
       if (response.status === 200) {
         const token = response.data.token; 
+        
+        localStorage.setItem("email",response.data.email );
+
         storeToken(token);      
-        setIsConnected(true);   
+        setIsConnected(true);           
         setSuccess('Connexion réussie!');
         setError(''); 
       }

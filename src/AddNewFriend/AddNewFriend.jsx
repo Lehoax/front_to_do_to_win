@@ -11,6 +11,7 @@ const AddNewFriend = ({emailFriend}) => {
     const [success, setSuccess] = useState(null);
     const serveurURL = process.env.REACT_APP_SERVER_URL;
     const { token } = useAuth()
+    
 
 const addFriend = async () =>{
     setSuccess(null);
@@ -35,6 +36,8 @@ const addFriend = async () =>{
             if (response.status === 201) {
                 setSuccess('Demande d\'ami envoyée')               
                 setError(null);
+                console.log(response);
+                
             }
         } catch (err) {
                          

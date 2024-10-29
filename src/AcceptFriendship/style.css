@@ -1,0 +1,11 @@
+.accept_friend{
+    display: flex;
+}
+
+.accept_friend_img{
+    height: 2rem;
+}
+.accept_friend_btn{
+    background-color: transparent;
+    border: 0;
+}

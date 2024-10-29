@@ -20,14 +20,13 @@ const Header = () => {
   const navigate = useNavigate();
   const {user, updateUser } = useUser();
   const {CurrentPage, setCurrentPage} = useNav();
-
+ 
   const fetchData = async () => {
     try {
-      const userEmail = localStorage.getItem('email'); 
-
+      const userEmail = localStorage.getItem('email');       
       if (!userEmail) {
-        setError('Veuillez vous reconnecter');
-        return; 
+        return setError('Veuillez vous reconnecter');
+        ; 
       }
 
       const response = await axios.post(`${serveurURL}/user/profile`, 
@@ -40,7 +39,7 @@ const Header = () => {
         }
       );
 
-      if (response.status === 200) {   
+      if (response.status === 200) {           
         setError(null);             
         return updateUser(response.data.user)
       }
@@ -57,23 +56,23 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let isMounted = true; 
+    let isMounted = true;     
     if (!isConnected) {
       navigate('/login')
       setCurrentPage('login')
     }
-    
+    //a voir
     const fetchUser = async () => {
-      if (isConnected && isMounted) { 
-        const newUser = await fetchData();
+      if (isConnected && isMounted) {         
+        const newUser = await fetchData();        
         if (newUser && newUser !== user) {
-          updateUser(newUser); 
+          updateUser(newUser);           
         }
       }
     };
   
     fetchUser(); 
-  
+    
     return () => {
       isMounted = false; 
     };

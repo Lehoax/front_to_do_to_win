@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './style.css'
 import AddNewFriend from '../AddNewFriend/AddNewFriend';
+import FriendRequestReceived from '../FriendRequestReceived/FriendRequestReceived'
 import { useAuth } from '../Context/AuthContext';
 
 
@@ -32,7 +33,8 @@ const NewFriend = () =>{
             );
     
             if (response.status === 200) {
-                setEmailFind(response.data.user.email)                
+                setEmailFind(response.data.user.email) 
+                               
                 setError(null);
             }
         } catch (err) {
@@ -92,6 +94,7 @@ const NewFriend = () =>{
                     <AddNewFriend emailFriend={emailFind}/>
                   </div>
                 )}
+                <FriendRequestReceived/>
             </div>
             
           );
