@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNav } from "../Context/NavContext";
-
+import { useUser } from '../Context/UserContext';
+import './style.css';
 
 const Profile = () => {
   const serveurURL = process.env.REACT_APP_SERVER_URL;
@@ -9,6 +10,8 @@ const Profile = () => {
   const [success, setSuccess] = useState(null);
   const [reminder, setReminder] = useState(false); 
   const {CurrentPage, setCurrentPage} = useNav();
+  const {user, updateUser } = useUser();
+
 
   const fetchData = async () => {
     try {
@@ -88,6 +91,7 @@ const Profile = () => {
   useEffect(() => {
     fetchData();
     setCurrentPage('profile'); 
+    
   }, []);
 
   const handleChange = () => {
@@ -100,10 +104,24 @@ const Profile = () => {
 
   return (
     <div id='profile'>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>} 
-      <label>Recevoir des rappels journaliers</label>
-      <input type='checkbox' onChange={handleChange} checked={reminder} />
+      <div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {success && <p style={{ color: 'green' }}>{success}</p>} 
+        <label>Recevoir des rappels journaliers</label>
+        <input type='checkbox' onChange={handleChange} checked={reminder} />
+        <h4>Mes amis :</h4>
+      {user && user.friends.length > 0 ? (
+            user.friends.map((friend) => (
+              <p key={friend} className='my_friend'>{friend}</p>
+            ))
+           
+          ) : (
+            <>
+              <p>Ajouter des amis</p>
+            </>
+          )}
+
+      </div>
     </div>
   );
 };

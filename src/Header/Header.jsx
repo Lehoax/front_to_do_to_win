@@ -55,7 +55,7 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {    
     let isMounted = true;     
     if (!isConnected) {
       navigate('/login')

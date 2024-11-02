@@ -1,0 +1,34 @@
+#profile {
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+@media (min-width: 768px) {
+    #profile {
+        margin-left: 15rem;
+        margin-right: 15rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #profile {
+        margin-left: 24rem;
+        margin-right: 24rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    #profile {
+        margin-left: 35rem;
+        margin-right: 35rem;
+    }
+}
+
+
+.my_friend{
+    border: solid 2px black;
+    width:-webkit-fill-available;
+    padding: .5rem;
+    background-color: #219EBC;
+}

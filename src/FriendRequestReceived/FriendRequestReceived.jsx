@@ -53,14 +53,17 @@ const FriendRequestReceived = () =>{
 
   return (
     <div>
-        <h1>Demande d'amis</h1>
-        {friendArray && (
+      <h1>Demande d'amis</h1>
+        {friendArray && friendArray.length > 0 ? (
             <div>
-                {friendArray.map((friend)=>{
-                    return <AcceptFriendship key={friend._id} emailApplicant={friend.emailApplicant}/>
-                })}
+                {friendArray.map((friend) => (
+                    <AcceptFriendship key={friend._id} emailApplicant={friend.emailApplicant} />
+                ))}
             </div>
+        ) : (
+            <p>Aucune demande d'amis en attente</p>
         )}
+
     </div>
 );
 
