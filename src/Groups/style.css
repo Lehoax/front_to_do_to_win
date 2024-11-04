@@ -1,0 +1,12 @@
+.new_group{
+    display: flex;
+    align-items: center;
+}
+.new_group:hover{
+    cursor: pointer;
+    opacity: 70%;
+}
+#new_group_add{
+    height: 1.5rem;
+    margin-left: 0.5rem;
+}

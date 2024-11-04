@@ -39,7 +39,6 @@ const Done = ({ taskID }) => {
 
       if (response.status === 200) {
         setError(null);
-        console.log("Task marked as done");
         completeTask(taskID); 
       }
     } catch (err) {

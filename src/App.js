@@ -9,6 +9,8 @@ import Tasks from './Tasks/Tasks';
 import Profile from './Profile/Profile';
 import NewTask from './NewTask/NewTask';
 import NewFriend from './NewFriend/NewFriend';
+import Groups from './Groups/Groups';
+import NewGroup from './NewGroup/NewGroup';
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
         <Route path="/new_task" element={<NewTask />} />
         <Route path="/" element={<Tasks />} />
         <Route path='/new_friend' element={<NewFriend/>} />
+        <Route path='/groups' element={<Groups/>} />
+        <Route path='/newgroup' element={<NewGroup/>} />
+
       </Routes>
       </div>
       <NavBar/>

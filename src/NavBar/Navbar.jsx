@@ -3,6 +3,7 @@ import './style.css';
 import add from '../img/add.png';
 import back from '../img/left-arrow.png';
 import friends from '../img/friends.png';
+import groups from '../img/link.png'
 import { useNavigate } from 'react-router-dom';
 import { useNav } from "../Context/NavContext";
 import { useAuth } from '../Context/AuthContext';
@@ -39,8 +40,8 @@ const NavBar = () => {
                     <button className="logo_btn center" onClick={() => handleNavigation('/new_task')} >
                         <img src={add} alt="Ajouter" />
                     </button>
-                    <button className="logo_btn right" /* onClick={() => handleNavigation('')} */>
-                        <img src={friends} alt="Amis" />
+                    <button className="logo_btn right" onClick={() => handleNavigation('/groups')}>
+                        <img src={groups} alt="Amis" />
                     </button>
                 </div>
             )}
