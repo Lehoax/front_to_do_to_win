@@ -1,0 +1,12 @@
+.see_groups{
+    display: flex;
+    align-items: center;
+}
+.see_groups:hover{
+    opacity: 50%;
+    cursor: pointer;
+}
+#see_group{
+    height: 1.5rem;
+    margin-left: 0.5rem;
+}
