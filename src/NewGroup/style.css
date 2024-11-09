@@ -1,6 +1,7 @@
 .see_groups{
     display: flex;
     align-items: center;
+    margin-left: 2rem;
 }
 .see_groups:hover{
     opacity: 50%;
@@ -9,4 +10,32 @@
 #see_group{
     height: 1.5rem;
     margin-left: 0.5rem;
+}
+.list_of_friend{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.add_user_group{
+    list-style: none;
+    margin-right: .5rem;
+    margin-bottom: .2rem;
+}
+.checkbox_user{
+    display: flex;
+    align-items: center;
+}
+#new_group{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FB8500;
+    border-color: #023047;
+    color: #023047;
+    margin-top: 1.5rem;
 }

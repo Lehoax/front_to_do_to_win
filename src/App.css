@@ -34,5 +34,5 @@ input:focus {
 .home{
     display: flex;
     flex-direction: column;
- 
+    justify-self: center;
 }

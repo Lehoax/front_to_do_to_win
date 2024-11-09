@@ -26,13 +26,11 @@ const handleSubmit = async (e) => {
         return;
     }
     try {
-        // Envoi de la requête POST à l'API avec axios
         const response = await axios.post(serveurURL+'/user/signup', {
           email,
           password,
         });
   
-        // Vérification de la réponse        
         if (response.status === 201) {
           setSuccess('Inscription réussie!');
         }
